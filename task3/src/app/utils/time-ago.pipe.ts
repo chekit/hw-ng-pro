@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'timeAgo'
+  name: 'timeAgo',
+  pure: false
 })
 export class TimeAgoPipe implements PipeTransform {
   private value: number = null;
