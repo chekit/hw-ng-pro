@@ -1,0 +1,9 @@
+<h1>Posts</h1>
+
+<div class="posts">
+  <div class="post" *ngFor="let item of data; trackBy: trackByIndex;">
+    <h2 class="post__title">{{ item.title }}</h2>
+    <p class="post__text">{{ item.content }}</p>
+    <p class="post__published">{{ item.published | timeAgo }}</p>
+  </div>
+</div>

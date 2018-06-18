@@ -1,0 +1,23 @@
+$border-top: #ccc;
+
+h1 {
+	margin: 0 0 1em;
+	padding: 0 0 .5em;
+	border-bottom: 1px solid $border-top;
+}
+
+.post {
+	max-width: 900px;
+	margin: 0 auto 1em;
+	padding: 25px;
+	box-shadow: 0 1px 3px rgba(#000, .35);
+	border-radius: 5px;
+	border: 1px solid $border-top;
+
+	&__published {
+		margin: 0;
+		padding: 10px 0;
+		border-top: 1px solid $border-top;
+		color: #444;
+	}
+}
