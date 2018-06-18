@@ -4,4 +4,4 @@
 
 ___
 
-**Результат**: [код](https://github.com/chekit/hw-ng-pro/blob/master/task3/src/app/utils/time-ago.pipe.ts), [пример], [песочница](https://stackblitz.com/edit/angular-jskndb)
+**Результат**: [код](https://github.com/chekit/hw-ng-pro/blob/master/task3/src/app/utils/time-ago.pipe.ts), [пример](https://chekit.github.io/hw-ng-pro/task3/dist/index.html), [песочница](https://stackblitz.com/edit/angular-jskndb)
