@@ -1,0 +1,18 @@
+<h1>ACL (Access Control Layer) Directive</h1>
+
+<button (click)="onChangeRole()">Change Role</button>
+
+<p>Current Rols: {{ currentRole$ | async }}</p>
+
+<div class="block block--admin" *acl="['admin', 'sudo']">
+  <p class="block__text">This content is visible only to <strong>"Admin"</strong> and <strong>"Sudo"</strong> roles</p>
+</div>
+
+<div class="block block--registered">
+   <p class="block__text">This content is visible to <strong>"All"</strong> roles</p>
+</div>
+
+<div class="block block--authorised" *acl="['user', 'middle']">
+    <p class="block__text">This content is visible to  <strong>"User"</strong> and <strong>"Middle"</strong> roles</p>
+</div>
+ 

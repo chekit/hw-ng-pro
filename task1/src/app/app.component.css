@@ -1,0 +1,30 @@
+* {
+	font-family: sans-serif;
+}
+
+.issue {
+	max-width: 900px;
+	padding: 10px;
+	color: rgb(75, 75, 75);
+	border: 1px solid rgb(71, 71, 71);
+}
+
+.block {
+	padding: 15px;
+	margin: 1em 0;
+	background-color: #fff;
+	color: black;
+	font-size: 14px;
+}
+
+.block--admin {
+	background-color: rgba(255, 0, 0, .15);
+}
+
+.block--registered {
+	background-color: rgba(0, 255, 0, .15);
+}
+
+.block--authorised	 {
+	background-color: rgba(0, 0, 255, .15);
+}
