@@ -3,7 +3,7 @@
 https://learn.javascript.ru/courses/angularpro
 
 ## Задания на курс
-- Сделать структурную директиву "ACL": в нее передается какие роли могут иметь доступ к компоненту. Она через сервис смотрит роль текущего пользователя и прячет либо показывает элемент на странице.
+<g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Сделать структурную директиву "ACL": в нее передается какие роли могут иметь доступ к компоненту. Она через сервис смотрит роль текущего пользователя и прячет либо показывает элемент на странице.
 
 > [Смотреть...](https://github.com/chekit/hw-ng-pro/tree/master/task1)
 
@@ -11,7 +11,7 @@ https://learn.javascript.ru/courses/angularpro
 
 > [Смотреть...](https://github.com/chekit/hw-ng-pro/tree/master/task2)
 
-- Сделать pipe, который будет показывать timeAgo => 1359 seconds ago (min, hours, day...)
+<g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Сделать pipe, который будет показывать timeAgo => 1359 seconds ago (min, hours, day...)
 
 > [Смотреть...](https://github.com/chekit/hw-ng-pro/tree/master/task3)
 
