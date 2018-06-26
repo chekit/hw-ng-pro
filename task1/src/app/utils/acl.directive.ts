@@ -1,5 +1,5 @@
 import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 import { AuthService } from '../auth.service';
 
@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 export class AclDirective implements OnInit, OnDestroy {
   private viewCreated = false;
   private subscription: Subscription = new Subscription();
-  private currentRole$ = this.authService.getCurrentUserRole();
+  private currentRole$: Observable<string> = this.authService.getCurrentUserRole();
 
   @Input('acl') roles: string[] = [];
 
