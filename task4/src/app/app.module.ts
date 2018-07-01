@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { RegisterFormModule } from './register-form/register-form.module';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule 
+    RegisterFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

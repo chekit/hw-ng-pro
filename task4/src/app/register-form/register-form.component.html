@@ -1,0 +1,33 @@
+<form class="form" [formGroup]="registerForm">
+  <fieldset class="form__group" *ngIf="type === 'full'" [ngClass]="{'error': !!formErrors.firstName.length}">
+    <label class="form__label" for="firstName">Имя:&nbsp;</label>
+    <input class="form__input" type="text" name="firstName" id="firstName" formControlName="firstName" placeholder="Your Name" />
+    <p class="form__error-message" *ngIf="!!formErrors.firstName.length">{{ formErrors.firstName }}</p>
+  </fieldset>
+  <fieldset class="form__group" *ngIf="type === 'full'" [ngClass]="{'error': !!formErrors.lastName.length}">
+    <label class="form__label" for="lastName">Фамилия:&nbsp;</label>
+    <input class="form__input" type="text" name="lastName" id="lastName" formControlName="lastName" placeholder="Yout Last Name" />
+    <p class="form__error-message" *ngIf="!!formErrors.lastName.length">{{ formErrors.lastName }}</p>
+  </fieldset>
+  <fieldset class="form__group" [ngClass]="{'error': !!formErrors.nickName.length}">
+    <label class="form__label" for="nicktName">Ник:&nbsp;</label>
+    <input class="form__input" type="text" name="nicktName" id="nicktName" formControlName="nickName" placeholder="Your NickName" />
+    <p class="form__error-message" *ngIf="!!formErrors.nickName.length">{{ formErrors.nickName }}</p>
+  </fieldset>
+  <fieldset class="form__group" *ngIf="type === 'full'">
+    <label class="form__label" for="phone">Телефон:&nbsp;</label>
+    <input class="form__input" type="number" name="phone" id="phone" formControlName="phone" placeholder="xxx-xxx-xx-xx" />
+  </fieldset>
+  <fieldset class="form__group">
+    <label class="form__label" for="password">Пароль:&nbsp;</label>
+    <input class="form__input" type="password" name="password" id="password" formControlName="password" />
+  </fieldset>
+  <fieldset class="form__group">
+    <label for="private" class="form__label--checkbox">
+      <input type="checkbox" name="private" id="private" formControlName="private" />
+      <span>Я согласен на обработку моих персональных данных</span>
+    </label>
+  </fieldset>
+  <!-- <button class="form__button--submit" (click)="sendForm($event)" [disabled]="registerForm.status !== 'VALID'">Зарегистрироваться</button> -->
+  <button class="form__button--submit" (click)="sendForm($event)">Зарегистрироваться</button>
+</form>
