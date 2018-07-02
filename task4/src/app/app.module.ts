@@ -1,19 +1,28 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgModule, Injector } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
-import { RegisterFormModule } from './register-form/register-form.module';
-
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [RegisterFormComponent],
   imports: [
     BrowserModule,
-    RegisterFormModule
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [RegisterFormComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    private injector: Injector
+  ) {
+    const registerForm = createCustomElement(RegisterFormComponent, { injector });
+    customElements.define('custom-register-form', registerForm);
+  }
+
+  ngDoBootstrap() { }
+}

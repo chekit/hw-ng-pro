@@ -1,12 +1,14 @@
-import { Component, OnInit, ViewEncapsulation, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs/operators';
-import { RegisterFormValidationService } from './register-form.service';
 
 interface IFormStatus {
-  status: string;
-  errors: string[];
+  status: FormStatus;
+}
+
+enum FormStatus {
+  SUCCESS = 'SUCCESS',
+  ERROR = 'ERROR'
 }
 
 @Component({
@@ -17,22 +19,21 @@ interface IFormStatus {
 })
 export class RegisterFormComponent implements OnInit {
   public registerForm: FormGroup = null;
-  
-  public formErrors: {[key: string]: string} = {
+
+  public formErrors: { [key: string]: string } = {
     firstName: '',
     lastName: '',
     nickName: '',
     password: '',
     phone: '',
     private: ''
- };
+  };
 
-  @Input() public type: string = 'full';
+  @Input() public type: 'full' | 'min' = 'full';
   @Output() public formStatus: EventEmitter<IFormStatus> = new EventEmitter();
 
   constructor(
     private fb: FormBuilder,
-    private formValidation: RegisterFormValidationService
   ) { }
 
   public ngOnInit(): void {
@@ -40,7 +41,11 @@ export class RegisterFormComponent implements OnInit {
   }
 
   public sendForm(): void {
-    this.validateForm(this.registerForm, this.formErrors);
+    this.formErrors = this.validateForm(this.registerForm, this.formErrors);
+
+    Object.keys(this.formErrors).some(key => this.formErrors[key].length > 0)
+      ? this.formStatus.emit({ status: FormStatus.ERROR })
+      : this.formStatus.emit({ status: FormStatus.SUCCESS });
   }
 
   private createForm(): Observable<any> {
@@ -56,15 +61,10 @@ export class RegisterFormComponent implements OnInit {
     return this.registerForm.valueChanges;
   }
 
-  private validateForm(formValues: FormGroup, errorsContainer: any): void {
-    public validate(formValues: FormGroup, errorsContainer: any) {
-      Object.keys(formValues.controls).reduce((acc, value) => {
-        errorsContainer[value] = formValues.controls[value].valid ? 'Поле заполнено неверно' : '';
-  
-        return errorsContainer;
-      }, errorsContainer);
-  
-      debugger;
-    }
+  private validateForm(formValues: FormGroup, errorsContainer: any): { [key: string]: string } {
+    return Object.keys({ ...formValues.controls }).reduce((acc, value) => {
+      errorsContainer[value] = !formValues.controls[value].valid ? 'Поле заполнено неверно' : '';
+      return errorsContainer;
+    }, errorsContainer);
   }
 }

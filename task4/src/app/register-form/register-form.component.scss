@@ -23,6 +23,7 @@
 	font-weight: 600;
 	font-size: 14px;
 	transition: all .25s ease-in-out;
+	outline: none;
 	cursor: pointer;
 
 	&[disabled] {
@@ -107,5 +108,10 @@ input[type=number]::-webkit-outer-spin-button {
 				background-color: rgba(0, 255, 0, .45);
 			}
 		}
+	}
+
+	&__error-message {
+		color: red;
+		font-size: 11px;
 	}
 }
