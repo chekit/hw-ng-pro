@@ -5,9 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --output-hashing=none",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "package": "cat ./dist/task4/{runtime,polyfills,scripts,main}.js > ./dist/custom-register-form.js",
+    "create": "npm run build && npm run package"
   },
   "private": true,
   "dependencies": {
