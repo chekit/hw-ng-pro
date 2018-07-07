@@ -4,4 +4,6 @@
 
 ___
 
-**Результат**: [код](https://github.com/chekit/hw-ng-pro/blob/master/task1/src/app/utils/acl.directive.ts), [песочница](https://stackblitz.com/edit/angular-acl?file=src%2Fapp%2Facl.directive.ts)
+## Результат
+- [код](https://github.com/chekit/hw-ng-pro/blob/master/task1/src/app/utils/acl.directive.ts), 
+- [песочница](https://stackblitz.com/edit/angular-acl?file=src%2Fapp%2Facl.directive.ts)
