@@ -15,6 +15,12 @@ https://learn.javascript.ru/courses/angularpro
 
 > [Смотреть...](https://github.com/chekit/hw-ng-pro/tree/master/task3)
 
-- Завернуть форму регистрации пользователя (стандартные поля) в angular-element. Сделать параметром: показывать минимальную форму или расширенную. Считывать событие успешного заполнения/отправки формы и ошибок формы.
+<g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Завернуть форму регистрации пользователя (стандартные поля) в angular-element. Сделать параметром: показывать минимальную форму или расширенную. Считывать событие успешного заполнения/отправки формы и ошибок формы.
 
 > [Смотреть...](https://github.com/chekit/hw-ng-pro/tree/master/task4)
+
+- Сделать форм контрол "светофор", только сделать с помощью radiobuttons. сделать кастомную валидацию (если красный свет - не валидно)
+
+- Сделать свой Observable класс/конструктор
+
+- **Бонус**: пример auditTime/debounceTime. pairwise
