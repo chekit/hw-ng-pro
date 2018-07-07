@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="registerForm" (ngSubmit)="sendForm()">
+<form class="form" [formGroup]="registerForm" (ngSubmit)="sendForm()" novalidate>
 	<fieldset class="form__group" *ngIf="type === 'full'" [ngClass]="{'error': !!formErrors.firstName.length}">
 	  <label class="form__label" for="firstName">Имя:&nbsp;</label>
 	  <input class="form__input" type="text" name="firstName" id="firstName" formControlName="firstName" placeholder="Your Name" />

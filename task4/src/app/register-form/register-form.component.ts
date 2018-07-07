@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
 
@@ -8,7 +8,8 @@ interface IFormStatus {
 
 enum FormStatus {
   SUCCESS = 'SUCCESS',
-  ERROR = 'ERROR'
+  ERROR = 'ERROR',
+  PRISTINE = 'PRISTINE'
 }
 
 @Component({
@@ -17,7 +18,7 @@ enum FormStatus {
   styleUrls: ['./register-form.component.scss'],
   encapsulation: ViewEncapsulation.Native
 })
-export class RegisterFormComponent implements OnInit {
+export class RegisterFormComponent implements OnInit, OnChanges {
   public registerForm: FormGroup = null;
 
   public formErrors: { [key: string]: string } = {
@@ -38,6 +39,14 @@ export class RegisterFormComponent implements OnInit {
 
   public ngOnInit(): void {
     this.createForm();
+
+    this.formStatus.emit({ status: FormStatus.PRISTINE });
+  }
+
+  public ngOnChanges(changes: SimpleChanges): void {
+    if (!changes.type.isFirstChange()) {
+      this.createForm();
+    }
   }
 
   public sendForm(): void {
@@ -54,7 +63,7 @@ export class RegisterFormComponent implements OnInit {
       lastName: [''],
       nickName: ['', Validators.required],
       password: ['', Validators.required],
-      phone: ['', this.type === 'full' ? [Validators.required, Validators.max(12)] : []],
+      phone: ['', this.type === 'full' ? [Validators.required] : []],
       private: [false, Validators.pattern(/true/g)]
     });
 

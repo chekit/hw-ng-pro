@@ -5,18 +5,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';
 
 import { RegisterFormComponent } from './register-form/register-form.component';
+// @TODO: uncomment when check
+// import { CheckFormComponent } from './check-form/check-form.component';
 
 @NgModule({
-  declarations: [RegisterFormComponent],
+  // @TODO: uncomment when check
+  declarations: [RegisterFormComponent/* , CheckFormComponent */],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
   ],
-  entryComponents: [RegisterFormComponent]
+  entryComponents: [RegisterFormComponent],
+  // @TODO: uncomment when check
+  // bootstrap: [CheckFormComponent]
 })
 export class AppModule {
+  // @TODO: comment all when check  
   constructor(
     private injector: Injector
   ) {
