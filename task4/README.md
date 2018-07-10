@@ -15,5 +15,5 @@
 ___
 
 ## Результат
-- [код](https://github.com/chekit/hw-ng-pro/blob/master/task4/src/app/register-form/register-form.component.ts), 
-- [песочница](https://next.plnkr.co/edit/acooRF0SsSMpmEgV?preview)
+- [Код](https://github.com/chekit/hw-ng-pro/blob/master/task4/src/app/register-form/register-form.component.ts), 
+- [Песочница](https://next.plnkr.co/edit/acooRF0SsSMpmEgV?preview)
