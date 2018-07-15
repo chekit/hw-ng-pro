@@ -6,6 +6,6 @@ ___
 
 ## Результат
 
-- [Код](https://github.com/chekit/hw-ng-pro/blob/master/task4/src/app/app.component.ts), 
+- [Код](https://github.com/chekit/hw-ng-pro/blob/master/task2/src/app/app.component.ts), 
 - [Песочница](https://stackblitz.com/edit/angular-ofnzwk?file=src/app/app.component.ts)
 
