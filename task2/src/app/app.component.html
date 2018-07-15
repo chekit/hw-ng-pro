@@ -1,3 +1,15 @@
 <div class="dashboard">
-  <ng-container appHost></ng-container>
+  <ng-container *ngIf="!isLoading; else loading;">
+    <div class="dashboard__item" *ngFor="let cmp of componentList">
+      <ng-container *ngComponentOutlet="cmp"></ng-container>
+    </div>
+  </ng-container>
+  <p *ngIf="componentList?.length === 0">No widgets loaded!</p>
 </div>
+<div class="manage">
+  <button (click)="onLoadWidgets()" class="manage__button">Load Widgets</button>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

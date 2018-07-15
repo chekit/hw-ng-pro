@@ -7,7 +7,7 @@ export class HostDirective {
   public readonly view: ViewContainerRef;
 
   constructor(
-    private viewContainerRef: ViewContainerRef
+    viewContainerRef: ViewContainerRef
   ) {
     this.view = viewContainerRef;
   }

@@ -35,3 +35,23 @@
 		}
 	}
 }
+
+.manage {
+	padding:  20px;
+
+	&__button {
+		width: 180px;
+		height: 50px;
+		border-radius: 5px;
+		background-color: #eee;
+		border: 1px solid #ccc;
+		font-weight: 600;
+		font-size: 1.1rem;
+		outline: none;
+
+		&:active {
+			background-color: rgb(221, 221, 221);
+			box-shadow: inset 0 0 1px rgba(0, 0, 0, .35);
+		}
+	}
+}
