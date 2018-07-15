@@ -15,12 +15,13 @@ export class AppComponent implements OnInit {
   public componentList: Widget[] = null;
   public isLoading: boolean = true;
 
+  public content: HTMLElement[] = [];
+
   private loadWidgetsSubject: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   constructor(
     private appService: AppService,
   ) {
-
   }
 
   public ngOnInit(): void {
@@ -32,6 +33,16 @@ export class AppComponent implements OnInit {
       .subscribe(
         (res) => {
           this.componentList = res;
+
+          this.content = this.componentList
+            .map((el: Widget) => {
+              const p = document.createElement('p');
+              p.textContent = 'This is widget content';
+              p.style.fontFamily = 'Lato, sans-serif';
+
+              return p;
+            });
+
           this.isLoading = false;
         }
       );
@@ -41,4 +52,6 @@ export class AppComponent implements OnInit {
     this.isLoading = true;
     this.loadWidgetsSubject.next(true);
   }
+
+
 }

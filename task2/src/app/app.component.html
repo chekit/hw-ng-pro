@@ -1,7 +1,7 @@
 <div class="dashboard">
   <ng-container *ngIf="!isLoading; else loading;">
-    <div class="dashboard__item" *ngFor="let cmp of componentList">
-      <ng-container *ngComponentOutlet="cmp"></ng-container>
+    <div class="dashboard__item" *ngFor="let cmp of componentList; let i = index">
+      <ng-container *ngComponentOutlet="cmp; content: [[content[i]]]"></ng-container>
     </div>
   </ng-container>
   <p *ngIf="componentList?.length === 0">No widgets loaded!</p>
