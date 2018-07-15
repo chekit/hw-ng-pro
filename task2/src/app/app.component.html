@@ -7,7 +7,7 @@
   <p *ngIf="componentList?.length === 0">No widgets loaded!</p>
 </div>
 <div class="manage">
-  <button (click)="onLoadWidgets()" class="manage__button">Load Widgets</button>
+  <button (click)="onLoadWidgets()" class="manage__button" [disabled]="isLoading">Load Widgets</button>
 </div>
 
 <ng-template #loading>
