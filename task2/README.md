@@ -6,4 +6,6 @@ ___
 
 ## Результат
 
-> https://stackblitz.com/edit/angular-rpksjz?file=src%2Fapp%2Fapp.component.html
+- [Код](https://github.com/chekit/hw-ng-pro/blob/master/task4/src/app/app.component.ts), 
+- [Песочница](https://stackblitz.com/edit/angular-ofnzwk?file=src/app/app.component.ts)
+

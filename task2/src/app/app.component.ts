@@ -1,11 +1,9 @@
-import { Component, ComponentFactoryResolver, OnInit, ViewContainerRef, ViewChild, Renderer2, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { BehaviorSubject, of } from 'rxjs';
+import { catchError, switchMap } from 'rxjs/operators';
+
 import { AppService } from './app.service';
-import { WidgetFourComponent } from './components/widget-four/widget-four.component';
-import { HostDirective } from './utils/host.directive';
-import { WidgetOneComponent } from './components/widget-one/widget-one.component';
 import { Widget } from './utils/widget.abstract';
-import { Subject, BehaviorSubject, Subscription, of, Observable } from 'rxjs';
-import { switchMap, catchError, startWith, tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +16,6 @@ export class AppComponent implements OnInit {
   public isLoading: boolean = true;
 
   private loadWidgetsSubject: BehaviorSubject<boolean> = new BehaviorSubject(true);
-
-  @ViewChild(HostDirective) private host: HostDirective;
 
   constructor(
     private appService: AppService,
