@@ -30,6 +30,12 @@ ___
 
 - Сделать форм контрол "светофор", только сделать с помощью radiobuttons. сделать кастомную валидацию (если красный свет - не валидно)
 
-- Сделать свой Observable класс/конструктор
+___
+
+<g-emoji class="g-emoji" alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji> Сделать свой Observable класс/конструктор
+
+> [Смотреть...](https://github.com/chekit/hw-ng-pro/tree/master/task6)
+
+___
 
 - **Бонус**: пример auditTime/debounceTime. pairwise
