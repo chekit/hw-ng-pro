@@ -3,7 +3,7 @@
 	grid-template-columns: repeat(auto-fill, 300px);
 	grid-gap: 25px;
 	padding: 25px;
-	
+
 	&__item {
 		padding: 25px;
 		background-color: #f8f8f8;
@@ -29,7 +29,7 @@
 		line-height: 1.3;
 		text-align: center;
 	}
-	/deep/ {
+	::ng-deep {
 		#{self}__text {
 			@extend %widget-text;
 		}
